@@ -1,0 +1,33 @@
+<h1>Listing lecturers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Last name</th>
+    <th>Age</th>
+    <th>Profile</th>
+    <th>Foto</th>
+    <th>Tenant</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lecturers.each do |lecturer| %>
+  <tr>
+    <td><%= lecturer.name %></td>
+    <td><%= lecturer.last_name %></td>
+    <td><%= lecturer.age %></td>
+    <td><%= lecturer.profile %></td>
+    <td><%= lecturer.foto %></td>
+    <td><%= lecturer.tenant %></td>
+    <td><%= link_to 'Show', lecturer %></td>
+    <td><%= link_to 'Edit', edit_lecturer_path(lecturer) %></td>
+    <td><%= link_to 'Destroy', lecturer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lecturer', new_lecturer_path %>
